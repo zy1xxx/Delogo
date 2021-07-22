@@ -1,4 +1,4 @@
-# remove logo
+# Delogo
 
 ## 简介
 
@@ -45,7 +45,6 @@ pip install imagehash
         cutCoords: the cut coords,format:(x,y),None means the code will help you to decide the coords and width and height
         cutRec: the cut width and height,format:(width,height)
 
-
     Returns:
         output path
 """
@@ -56,11 +55,11 @@ pip install imagehash
 #### 函数接口
 
 ```python
-run(captionMode=True,extractFlag=False,frameInterval=(0,18),maskcoords=(145,429),maskRec=(338-145,491-429),cutCoords=(109,396),cutRec=(max(383-109,579-396),max(383-109,579-396))) #lena2 字幕
-run(path="lena2.mp4",captionMode=False,extractFlag=False,frameInterval=(0,0),maskcoords=(21,65),maskRec=(104-21,148-65),output="lena2_out.mp4") #lena2 图标       
-run(path='test1.mp4',captionMode=False,extractFlag=True,frameInterval=(0,0),maskcoords=(41,37),maskRec=(155-41,158-37),output='test132_out.mp4')  #test1
-run(path='test2.mp4',captionMode=False,extractFlag=True,frameInterval=(0,180),maskcoords=(42,80),maskRec=(209-42,240-80),output="test223_out.mp4")  #test2
-run(path='test3.mp4',extractFlag=True,frameInterval=(0,300),maskcoords=(16,26),maskRec=(326-16,160-26),output="test3_output.mp4") # test3 图标
+delogo=Delogo() 
+#for video
+delogo.run(path="lena2.mp4",captionMode=True,extractFlag=False,frameInterval=(0,18),maskcoords=(138,424),maskRec=(337-138,493-424),output="lena2_out_caption.mp4") 
+#for preview
+delogo.preview(path="lena2.mp4",frameInterval=(0,0),maskcoords=(138,424),maskRec=(337-138,493-424),output="lena2_preview.png",captionMode=True)
 ```
 
 #### 命令行接口
@@ -88,7 +87,7 @@ python removeLogo.py --path lena2.mp4 --maskcoords "(0,423)" --maskRec "(344,490
 
 因为将视频分割成了shot或者patch，我们可以采用并行进行加速。FGVC和RIFE(补帧)都用了并行进行加速。
 
-![image-20210720174545067](image-20210720174545067.png)
+![image-20210720174545067](note2.assets/image-20210720174545067.png)
 
 ## 处理过程
 
@@ -138,4 +137,3 @@ finalLs=[(0, 32), (33, 65), (66, 92), (93, 131), (132, 157), (158, 191), (192, 2
 ## 参数建议
 
 如果logo在左上角，尽量让mask覆盖整个左上角区域，也就是maskCoords=(0,0)。这样处理视频和原视频的叠加不会特别突兀。
-
