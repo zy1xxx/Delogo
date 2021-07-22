@@ -87,7 +87,7 @@ python removeLogo.py --path lena2.mp4 --maskcoords "(0,423)" --maskRec "(344,490
 
 因为将视频分割成了shot或者patch，我们可以采用并行进行加速。FGVC和RIFE(补帧)都用了并行进行加速。
 
-![image-20210720174545067](note2.assets/image-20210720174545067.png)
+![image-20210720174545067](image-20210720174545067.png)
 
 ## 处理过程
 
