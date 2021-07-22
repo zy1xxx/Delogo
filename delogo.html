@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>delogo</title>
+</head>
+<body>
+    <form action="http://172.17.0.92:3487/delogo" method="post">
+        method: <input type="text" name="method" value="delogo"><br>
+        video url: <input type="text" name="path" value="https://mira-1255830993.cos.ap-shanghai.myqcloud.com/public2/lena2.mp4"><br>
+        maskcoords: <input type="text" name="maskcoords" value="(0,0)"><br>
+        maskRec: <input type="text" name="maskRec" value="(0,0)"><br>
+        frameInterval: <input type="text" name="frameInterval" value="(0,10)"><br>
+        captionMode: <input type="checkbox" name="captionMode" value="True"><br>
+        patchSplit: <input type="checkbox" name="patchSplit" value="True"><br>
+        extractFlag: <input type="checkbox" name="extractFlag" value="True"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
