@@ -65,7 +65,7 @@ delogo.preview(path="lena2.mp4",frameInterval=(0,0),maskcoords=(138,424),maskRec
 #### 命令行接口
 
 ```
-python removeLogo.py --path lena2.mp4 --maskcoords "(0,423)" --maskRec "(344,490)" --frameInterval "(0,18)" --captionMode
+python delogo.py --path lena2.mp4 --maskcoords "(0,423)" --maskRec "(344,490)" --frameInterval "(0,18)" --captionMode
 ```
 
 
